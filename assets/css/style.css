@@ -1,0 +1,17 @@
+
+.jumbotron h1 {
+	color:#790909;
+}
+
+
+/*.container::after {
+ content: " - Remember this";
+    background-color: yellow;
+    color: red;
+    font-weight: bold;
+    margin: 0 auto;
+}*/
+
+p{
+	font-size: 200%;
+}
