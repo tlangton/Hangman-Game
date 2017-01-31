@@ -37,17 +37,23 @@ if (alphabetIndex > -1) {
 	// alert("alphabetIndex: " + alphabetIndex);
 
 //decriment remaining guesses
-  remainingGuesses = remainingGuesses - 1;
-  document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
+remainingGuesses = remainingGuesses - 1;
+document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
+
+// game over if guesses = 0
+if (remainingGuesses == 0) {
+	document.getElementById("guessedLettersList").innerHTML = "Game Over - Loser!";
+}
+// alert("remainingGuesses: " + remainingGuesses);
 
 //traverses array of solution letters (by length of array)
 //if solution letter matches the guessed letter, the guessed letter is filled in in the solution interface
 // -1 index is no match - otherwise is the index of place in array
 for (i = 0; i < solutionLetters.length; i++) {
-var solutionIndex = solutionLetters[i].indexOf(guessedLetter)
-if (solutionIndex > -1) {
-	solutionInterface.splice([i] ,1,guessedLetter);
-}
+	var solutionIndex = solutionLetters[i].indexOf(guessedLetter)
+	if (solutionIndex > -1) {
+		solutionInterface.splice([i] ,1,guessedLetter);
+	}
 }
 document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
 
@@ -59,13 +65,19 @@ if (alreadyGuessed > -1){
 	return
 }
 else{
-guessedLettersList.push(guessedLetter);
+	guessedLettersList.push(guessedLetter);
 }
-
 document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
 
 
 
+// checks to see if any blanks in the solution interface - where the guesses go
+// if no blanks, all letters are filled, thus a winner
+var countSolutionBlanks = solutionInterface.indexOf ("_");
+if (countSolutionBlanks == -1) {
+	document.getElementById("guessedLettersList").innerHTML = "Game Over - You win!";
+}
+// alert("countSolutionBlanks: " + countSolutionBlanks);
 
 
 
