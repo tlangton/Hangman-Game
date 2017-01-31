@@ -36,7 +36,7 @@ document.onkeyup = function(event) {
 
   document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
 
-
+// TO BE DONE - Needs a loop to go through all the letters in the solution and splice in as needed
 //if the indesx is >0, the geuessed letter exists in the solution
 var solutionIndex = solutionLetters.indexOf(guessedLetter)
 if (solutionIndex > -1) {
