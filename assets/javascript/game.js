@@ -3,8 +3,9 @@ var solutionList = ["red","blue","green","yellow"];
 var solution;
 var solutionInterface;
 var solutionLetters;
-var remainingGuesses = 11;
+var remainingGuesses = 10;
 var guessedLettersList=[];
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
  // Randomly chooses a choice from the solution list array.
  solution = solutionList[Math.floor(Math.random() * solutionList.length)];
@@ -17,50 +18,58 @@ solutionLetters = solution.split("");
  document.getElementById("solutionArray").innerHTML = "Solution array: " + solutionLetters;
 
 //build the interface element for the guessed letters
- solutionInterface = [];
- for (i = 0; i < solutionLetters.length; i++) {
- 	solutionInterface.push("_");
- }
+solutionInterface = [];
+for (i = 0; i < solutionLetters.length; i++) {
+	solutionInterface.push("_");
+}
 
 
-
-
+// THIS IS THE KEYBOARD ENTRY EVENT
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
 
   // Determines which key was pressed
-  var winner;
   var guessedLetter = event.key;
 
-  remainingGuesses = remainingGuesses - 1;
+// validate key against alphabet (has to be a letter to pass)
+var alphabetIndex = alphabet.indexOf(guessedLetter)
+if (alphabetIndex > -1) {
+	// alert("alphabetIndex: " + alphabetIndex);
 
+//decriment remaining guesses
+  remainingGuesses = remainingGuesses - 1;
   document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
 
-// TO BE DONE - Needs a loop to go through all the letters in the solution and splice in as needed
-//if the indesx is >0, the geuessed letter exists in the solution
-var solutionIndex = solutionLetters.indexOf(guessedLetter)
+//traverses array of solution letters (by length of array)
+//if solution letter matches the guessed letter, the guessed letter is filled in in the solution interface
+// -1 index is no match - otherwise is the index of place in array
+for (i = 0; i < solutionLetters.length; i++) {
+var solutionIndex = solutionLetters[i].indexOf(guessedLetter)
 if (solutionIndex > -1) {
-solutionInterface.splice(solutionIndex ,1,guessedLetter);
+	solutionInterface.splice([i] ,1,guessedLetter);
 }
+}
+document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
 
- document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
 
-  var alreadyGuessed = guessedLettersList.indexOf (guessedLetter);
-// alert("guessed index: " + alreadyGuessed);
-if (alreadyGuessed > 0){
+//checks if guessed letter is on the guessed list.
+// if it isn't - it's added (pushed) on the the variable
+var alreadyGuessed = guessedLettersList.indexOf (guessedLetter);
+if (alreadyGuessed > -1){
 	return
 }
-
+else{
 guessedLettersList.push(guessedLetter);
- //    // Alerts the key the user pressed (userGuess).
-    // alert("user guesses: " + guessedLettersList);
+}
 
-    document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
-
+document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
 
 
 
 
 
 
+// end of alphabet check
+}
+//END OF THE ENTRY EVENT
 }

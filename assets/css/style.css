@@ -3,6 +3,11 @@
 	color:#790909;
 }
 
+body {
+	background-image: url " ../images/SeamlessPatternBauhaus.png";
+	background-repeat: no-repeat;
+	/*background-color: #333;*/
+}
 
 /*.container::after {
  content: " - Remember this";
@@ -10,8 +15,28 @@
     color: red;
     font-weight: bold;
     margin: 0 auto;
-}*/
+    }*/
 
-p{
-	font-size: 200%;
-}
+    p {
+    	margin: 0 5%;
+    	font-size: 200%;
+    	padding-left: : 60px;
+    }
+
+
+    img {
+    	text-align: center;
+    }
+
+
+    #bauhauslogo {
+
+    	position: absolute;
+    	left: 710px;
+    	top: 12px;
+
+    }
+
+
+
+
