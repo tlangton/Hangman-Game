@@ -115,6 +115,9 @@ if (countSolutionBlanks == -1) {
 // alert("countSolutionBlanks: " + countSolutionBlanks);
 
 
+// if (remainingGuesses == 0  || countSolutionBlanks >0 ) {
+// 	gameOver = 1;
+// }
 
 document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
 document.getElementById("wins").innerHTML = "Wins: " + wins;
