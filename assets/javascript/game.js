@@ -1,15 +1,32 @@
 //global variables
-var solutionList = ["red","blue","green","yellow"];
+var solutionList = [
+["red","A warmy primary color"],
+["blue","A cool primary color"],
+["green","A verdant primary color"],
+["yellow", "A chicken color"]
+];
 var solution;
+var solutionHint;
 var solutionInterface;
 var solutionLetters;
 var remainingGuesses = 10;
 var guessedLettersList=[];
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var gameOver=0;
+var wins =0;
+var losses=0;
+
+//display wins/losses
+document.getElementById("wins").innerHTML = "Wins: " + wins;
+document.getElementById("losses").innerHTML = "Losses: " + losses;
 
  // Randomly chooses a choice from the solution list array.
- solution = solutionList[Math.floor(Math.random() * solutionList.length)];
+ myRandom = Math.floor(Math.random() * solutionList.length);
+ //insert random into solution and hint vars
+ 	solution = solutionList[myRandom][0];
   // alert( "solution: " + solution);
+  	solutionHint = solutionList[myRandom][1];
+ 	 document.getElementById("solutionHint").innerHTML = "Hint: " + solutionHint;
 
 //splits word into array
 solutionLetters = solution.split("");
@@ -24,12 +41,26 @@ for (i = 0; i < solutionLetters.length; i++) {
 }
 
 
+
+
 // THIS IS THE KEYBOARD ENTRY EVENT
 // This function is run whenever the user presses a key.
 document.onkeyup = function(event) {
 
   // Determines which key was pressed
-  var guessedLetter = event.key;
+  // var guessedLetter = event.key;
+
+// stops see keys if game over
+  if (gameOver === 1) {
+document.getElementById("solutionArray").innerHTML = "Press any key to play again.";
+// gameOver = 0;
+
+  }
+else	{
+
+
+
+var guessedLetter = String.fromCharCode(event.keyCode).toLowerCase();
 
 // validate key against alphabet (has to be a letter to pass)
 var alphabetIndex = alphabet.indexOf(guessedLetter)
@@ -43,6 +74,8 @@ document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + 
 // game over if guesses = 0
 if (remainingGuesses == 0) {
 	document.getElementById("guessedLettersList").innerHTML = "Game Over - Loser!";
+	losses = losses + 1;
+	gameOver = 1;
 }
 // alert("remainingGuesses: " + remainingGuesses);
 
@@ -76,12 +109,22 @@ document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + 
 var countSolutionBlanks = solutionInterface.indexOf ("_");
 if (countSolutionBlanks == -1) {
 	document.getElementById("guessedLettersList").innerHTML = "Game Over - You win!";
+	wins = wins + 1;
+	gameOver = 1;
 }
 // alert("countSolutionBlanks: " + countSolutionBlanks);
 
 
 
+document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
+document.getElementById("wins").innerHTML = "Wins: " + wins;
+document.getElementById("losses").innerHTML = "Losses: " + losses;
+
+//end of game over condition
+}
+
 // end of alphabet check
 }
 //END OF THE ENTRY EVENT
 }
+
