@@ -54,6 +54,7 @@ color: #100;
  	background-color: #CD020F;
  	color: white;
  	font-weight: 400%;
- 	/*text-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;*/
+ 	font-family: 'Bungee', cursive;
+ 	text-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
 
  }
