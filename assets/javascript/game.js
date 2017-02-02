@@ -19,10 +19,10 @@ var gameOver;
 
 function gameSetup() {
 
-remainingGuesses = 10;
-guessedLettersList=[];
-gameOver=0;
-graphicArray=[];
+	remainingGuesses = 10;
+	guessedLettersList=[];
+	gameOver=0;
+	graphicArray=[];
 
  // Randomly chooses a choice from the solution list array.
  myRandom = Math.floor(Math.random() * solutionList.length);
@@ -103,13 +103,12 @@ for (i = 0; i < solutionLetters.length; i++) {
 	}
 }
 
-
+//have to reset graphic array here or it adds to itself strangely
+graphicArray ="";
 for (i = 0; i < solutionInterface.length ; i++) {
-
-	graphicArray = graphicArray + "<span>" + solutionInterface[i] + "</span>";
+	graphicArray = graphicArray +  solutionInterface[i].toUpperCase(); ;
 }
 
-console.log("graphicArray");
 
 //checks if guessed letter is on the guessed list.
 // if it isn't - it's added (pushed) on the the variable
