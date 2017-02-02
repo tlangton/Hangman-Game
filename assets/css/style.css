@@ -48,10 +48,12 @@ color: #100;
 
  #graphicArray {
  	margin-left: : 100px;
- 	font-size: 400%;
+ 	font-size: 800%;
  	display: inline-block;
  	letter-spacing: 10px;
  	background-color: #CD020F;
  	color: white;
+ 	font-weight: 400%;
+ 	/*text-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;*/
 
  }

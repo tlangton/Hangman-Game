@@ -143,6 +143,7 @@ document.getElementById("solutionInterface").innerHTML = "Solution Interface: " 
 // document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
 document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
 document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
+document.getElementById("remainingGuesses").innerHTML = "";
 
 //END OF THE ENTRY EVENT
 }
