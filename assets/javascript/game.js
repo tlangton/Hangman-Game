@@ -12,7 +12,7 @@ var solutionLetters;
 var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var wins =0;
 var losses=0;
-
+var graphicArray;
 var remainingGuesses;
 var guessedLettersList;
 var gameOver;
@@ -22,6 +22,7 @@ function gameSetup() {
 remainingGuesses = 10;
 guessedLettersList=[];
 gameOver=0;
+graphicArray=[];
 
  // Randomly chooses a choice from the solution list array.
  myRandom = Math.floor(Math.random() * solutionList.length);
@@ -42,8 +43,10 @@ solutionLetters = solution.split("");
 solutionInterface = [];
 for (i = 0; i < solutionLetters.length; i++) {
 	solutionInterface.push("_");
+	graphicArray = graphicArray + "_";
 }
 
+document.getElementById("graphicArray").innerHTML = graphicArray;
 document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
 document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
 document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
@@ -73,6 +76,7 @@ var alphabetIndex = alphabet.includes(guessedLetter)
 if (alphabetIndex == true) {
 	// alert("alphabetIndex: " + alphabetIndex);
 
+
 //decriment remaining guesses
 remainingGuesses = remainingGuesses - 1;
 document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
@@ -84,6 +88,7 @@ if (remainingGuesses == 0) {
 	document.getElementById("guessedLettersList").innerHTML = "Game Over - Loser!";
 	document.getElementById("solutionHint").innerHTML = "Press any key to play again.";
 	document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
+	document.getElementById("remainingGuesses").innerHTML = "";
 	return
 }
 // alert("remainingGuesses: " + remainingGuesses);
@@ -97,6 +102,14 @@ for (i = 0; i < solutionLetters.length; i++) {
 		solutionInterface.splice([i] ,1,guessedLetter);
 	}
 }
+
+
+for (i = 0; i < solutionInterface.length ; i++) {
+
+	graphicArray = graphicArray + "<span>" + solutionInterface[i] + "</span>";
+}
+
+console.log("graphicArray");
 
 //checks if guessed letter is on the guessed list.
 // if it isn't - it's added (pushed) on the the variable
@@ -114,6 +127,7 @@ var countSolutionBlanks = solutionInterface.includes ("_");
 if (countSolutionBlanks == false) {
 	document.getElementById("guessedLettersList").innerHTML = "Game Over - You win!";
 	document.getElementById("solutionHint").innerHTML = "Press any key to play again.";
+	document.getElementById("remainingGuesses").innerHTML = "";
 	wins = wins + 1;
 	gameOver = 1
 }
@@ -125,8 +139,9 @@ if (countSolutionBlanks == false) {
 // end of alphabet check
 }
 
+document.getElementById("graphicArray").innerHTML = graphicArray;
 document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
-document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
+// document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
 document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
 document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
 
