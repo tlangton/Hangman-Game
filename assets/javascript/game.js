@@ -62,6 +62,8 @@ document.onkeyup = function(event) {
   // Determines which key was pressed
   var guessedLetter = String.fromCharCode(event.keyCode).toLowerCase();
 
+
+
 // stops see keys if game over
 if (gameOver === 1 ) {
 	// document.getElementById("solutionHint").innerHTML = "Press 1 to play again.";
@@ -70,13 +72,9 @@ if (gameOver === 1 ) {
 }
 else	{
 
-
 // validate key against alphabet (has to be a letter to pass)
 var alphabetIndex = alphabet.includes(guessedLetter)
 if (alphabetIndex == true) {
-	// alert("alphabetIndex: " + alphabetIndex);
-
-
 
 
 // game over if guesses = 0
@@ -89,7 +87,6 @@ if (remainingGuesses == 0) {
 	document.getElementById("remainingGuesses").innerHTML = "";
 	return
 }
-// alert("remainingGuesses: " + remainingGuesses);
 
 //traverses array of solution letters (by length of array)
 //if solution letter matches the guessed letter, the guessed letter is filled in in the solution interface
@@ -117,8 +114,8 @@ if (alreadyGuessed == true){
 else{
 	guessedLettersList.push(guessedLetter);
 	//decrement remaining guesses
-remainingGuesses = remainingGuesses - 1;
-document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
+	remainingGuesses = remainingGuesses - 1;
+	document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
 }
 
 // checks to see if any blanks in the solution interface - where the guesses go
@@ -131,7 +128,6 @@ if (countSolutionBlanks == false) {
 	wins = wins + 1;
 	gameOver = 1
 }
-// alert("countSolutionBlanks: " + countSolutionBlanks);
 
 //end of game over condition
 }
@@ -139,12 +135,11 @@ if (countSolutionBlanks == false) {
 // end of alphabet check
 }
 
+//refresh display
 document.getElementById("graphicArray").innerHTML = graphicArray;
-// document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
-// document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
 document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
 document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
-// document.getElementById("remainingGuesses").innerHTML = "";
+
 
 //END OF THE ENTRY EVENT
 }

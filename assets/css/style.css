@@ -1,13 +1,13 @@
 
 /*.jumbotron h1 {*/
 	/*color:#790909;
-}*/
+	}*/
 
-body {
-	background-image: url "../images/SeamlessPatternBauhaus.png";
-	background-repeat: no-repeat;
-	/*background-color: #333;*/
-}
+	body {
+		background-image: url "../images/SeamlessPatternBauhaus.png";
+		background-repeat: no-repeat;
+		/*background-color: #333;*/
+	}
 
 /*.container::after {
  content: " - Remember this";
@@ -26,7 +26,8 @@ body {
 
 
     img {
-    	text-align: center;
+    	position: relative;
+    	left: 12px;
     }
 
 
@@ -41,39 +42,41 @@ body {
 
 
 
-#bhlogo {
-max-width: 1000px;
-margin: 0 auto;
-color: #100;
-text-align: center;
-margin: 0 auto;
-background-color: #CD020F;
- }
+    #bhlogo {
+    	max-width: 1000px;
+    	/*margin: 0 auto;*/
+    	/*color: #100;*/
+    	/*text-align: center;*/
+    	/*margin: 0 auto;*/
+    	/*background-color: #CD020F;*/
+    }
 
- #graphicArray {
- 	/*float: left;*/
- 	/*position: absolute;*/
- 	margin-left: : 100px;
- 	font-size: 800%;
- 	display: inline-block;
- 	letter-spacing: 10px;
- 	background-color: #CD020F;
- 	color: white;
- 	font-weight: 400%;
- 	font-family: 'Bungee', cursive;
- 	text-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
-background-image: "../images/letter_border.gif"
- }
+    #graphicArray {
+    	/*float: left;*/
+    	/*position: absolute;*/
+    	margin-left: : 100px;
+    	font-size: 800%;
+    	display: inline-block;
+    	letter-spacing: 15px;
+    	background-color: #CD020F;
+    	color: white;
+    	font-weight: 400%;
+    	font-family: 'Bungee', cursive;
+    	text-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
 
- .guesses {
- 	max-width: 1000px;
-text-align: center;
-margin: 0 auto;
-background-color: #CD020F;
-/*border: 112px;*/
-    padding: 26px 0px;
- }
+    }
 
- .center-paragraph {
- 	text-align: center;
- }
+    .guesses {
+    	max-width: 1000px;
+    	/*text-align: center;*/
+    	margin: 0 auto;
+    	background-color: #CD020F;
+    	/*border-right-width: 4px;*/
+    	/*border-right-color: #fff;*/
+    	/*border: 112px;*/
+    	padding: 26px 0px;
+    }
+
+    .center-paragraph {
+    	text-align: center;
+    }
