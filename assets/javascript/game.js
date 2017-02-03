@@ -49,7 +49,7 @@ for (i = 0; i < solutionLetters.length; i++) {
 document.getElementById("graphicArray").innerHTML = graphicArray;
 document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
 document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
-document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
+// document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
 
 }
 
@@ -77,9 +77,7 @@ if (alphabetIndex == true) {
 	// alert("alphabetIndex: " + alphabetIndex);
 
 
-//decriment remaining guesses
-remainingGuesses = remainingGuesses - 1;
-document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
+
 
 // game over if guesses = 0
 if (remainingGuesses == 0) {
@@ -118,6 +116,9 @@ if (alreadyGuessed == true){
 }
 else{
 	guessedLettersList.push(guessedLetter);
+	//decrement remaining guesses
+remainingGuesses = remainingGuesses - 1;
+document.getElementById("remainingGuesses").innerHTML = "Remaining Guesses: " + remainingGuesses;
 }
 
 // checks to see if any blanks in the solution interface - where the guesses go
@@ -139,11 +140,11 @@ if (countSolutionBlanks == false) {
 }
 
 document.getElementById("graphicArray").innerHTML = graphicArray;
-document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
+// document.getElementById("solutionInterface").innerHTML = "Solution Interface: " + solutionInterface;
 // document.getElementById("gameOver").innerHTML = "gameOver: " + gameOver;
 document.getElementById("tally").innerHTML = "Wins: " + wins + " &nbsp Losses: " + losses;
 document.getElementById("guessedLettersList").innerHTML = "Guessed Letters: " + guessedLettersList;
-document.getElementById("remainingGuesses").innerHTML = "";
+// document.getElementById("remainingGuesses").innerHTML = "";
 
 //END OF THE ENTRY EVENT
 }

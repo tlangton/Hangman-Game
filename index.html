@@ -4,59 +4,77 @@
 	<title>Hangman</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="    sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"   crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
 	<link href="https://fonts.googleapis.com/css?family=Bungee|Hammersmith+One|Russo+One" rel="stylesheet"></head>
-<body>
-	<div class="container">
-		<div class="row">
+	<link rel="stylesheet" type="text/css" href="assets/css/darkly.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<body>
+		<div class="container">
+			<div class="row">
 
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<a class="navbar-brand" href="index.html">
-							<section class="glyphicon glyphicon-off"> </section> Reset
-						</a>
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="index.html">
+								<section class="glyphicon glyphicon-off"> </section> Reset
+							</a>
+						</div>
 					</div>
-				</div>
-			</nav>
-		</div>
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="jumbotron">
+				</nav>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron">
 
-					<h1>Bauhaus Hangman!</h1>
+					<img id="bhlogo" src="assets/images/Bauhaus_logo1.gif" alt="">
 
-					<p><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Press letters to guess solution.</p>
-					<p>10 guesses per turn.</p>
-					<p>Repeatedly entered letters count as guesses.</p>
+					<div class="col-md-6">
 
-					<div id="bauhauslogo">
+
+						<p><span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span> Press letters to guess solution.</p>
+						<p>10 guesses per turn.</p>
+						<!-- <p>Repeatedly entered letters count as guesses.</p> -->
+						</div>
+
+						<div class="col-md-6">
+
+<p> <span id="tally"></span> </p>
+<p id="remainingGuesses"></p>
+
+						</div>
+					<!-- <div id="bauhauslogo">
 						<img src="assets/images/bauhaus.jpg">
+					</div> -->
+
+					<div class="row">
+
+						<div class="col-md-12 center-paragraph">
+
+							<div class="guesses">
+								<span id=graphicArray></span>
+							</div>
+
+
+							<br>
+
+							<!-- <p> <span id="tally"></span> </p> -->
+							<!-- <p id="solutionArray"></p> -->
+							<!-- <p id="solutionInterface"></p> -->
+							<p id="solutionHint"></p>
+							<p id="guessedLettersList"></p>
+
+							<!-- <p id="gameOver"></p> -->
+
+						</div>
+
 					</div>
+
 				</div>
 			</div>
 		</div>
 
 
-		<div class="row">
 
-			<div class="col-lg-12">
-
-				<img id="bhlogo" src="assets/images/Bauhaus_logo1.gif" alt="">
-<br>
-
-			<span id=graphicArray></span>
-			<p> <span id="tally"></span> </p>
-				<p id="solutionArray"></p>
-				<p id="solutionInterface"></p>
-				<p id="solutionHint"></p>
-				<p id="guessedLettersList"></p>
-				<p id="remainingGuesses"></p>
-				<p id="gameOver"></p>
-
-			</div>
-
-		</div>
 	</div>
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
