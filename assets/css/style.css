@@ -57,13 +57,12 @@
     	margin-left: : 100px;
     	font-size: 800%;
     	display: inline-block;
-    	letter-spacing: 15px;
+    	letter-spacing: 20px;
     	background-color: #CD020F;
     	color: white;
     	font-weight: 400%;
-    	font-family: 'Bungee', cursive;
+    	font-family: 'Helvetica-bold', cursive;
     	text-shadow: 2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
-
     }
 
     .guesses {
